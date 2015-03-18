@@ -153,6 +153,10 @@
             <groupId>com.jayant</groupId>
             <artifactId>core</artifactId>
         </dependency>
+		<dependency>
+   			<groupId>mysql</groupId>
+   			<artifactId>mysql-connector-java</artifactId>
+		</dependency>        
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>

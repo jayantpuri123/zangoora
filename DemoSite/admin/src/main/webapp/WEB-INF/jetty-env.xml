@@ -14,7 +14,7 @@ IT IS NOT RECOMMENDED TO USE JETTY IN A PRODUCTION ENVIRONMENT.
         <Arg type="boolean">true</Arg>
     </New>
     
-    <New id="webDS" class="org.eclipse.jetty.plus.jndi.Resource">
+<!--     <New id="webDS" class="org.eclipse.jetty.plus.jndi.Resource">
         <Arg>jdbc/web</Arg>
         <Arg>
             <New class="org.apache.commons.dbcp.BasicDataSource">
@@ -49,5 +49,43 @@ IT IS NOT RECOMMENDED TO USE JETTY IN A PRODUCTION ENVIRONMENT.
             </New>
         </Arg>
     </New>
+ -->
+ 
+<!-- MySQL Integration Start -->
+	<New id="webDS" class="org.eclipse.jetty.plus.jndi.Resource">
+    	<Arg>jdbc/web</Arg>
+    	<Arg>
+        	<New class="org.apache.commons.dbcp.BasicDataSource">
+            	<Set name="driverClassName">com.mysql.jdbc.Driver</Set>
+            	<Set name="url">jdbc:mysql://localhost:3306/broadleaf?useUnicode=true&amp;characterEncoding=utf8</Set>
+            	<Set name="username">root</Set>
+            	<Set name="password">root</Set>
+        	</New>
+    	</Arg>
+	</New>
 
+	<New id="webSecureDS" class="org.eclipse.jetty.plus.jndi.Resource">
+    	<Arg>jdbc/secure</Arg>
+    	<Arg>
+        	<New class="org.apache.commons.dbcp.BasicDataSource">
+            	<Set name="driverClassName">com.mysql.jdbc.Driver</Set>
+            	<Set name="url">jdbc:mysql://localhost:3306/broadleaf?useUnicode=true&amp;characterEncoding=utf8</Set>
+            	<Set name="username">root</Set>
+            	<Set name="password">root</Set>
+        	</New>
+    	</Arg>
+	</New>
+
+	<New id="webStorageDS" class="org.eclipse.jetty.plus.jndi.Resource">
+    	<Arg>jdbc/storage</Arg>
+    	<Arg>
+        	<New class="org.apache.commons.dbcp.BasicDataSource">
+            	<Set name="driverClassName">com.mysql.jdbc.Driver</Set>
+            	<Set name="url">jdbc:mysql://localhost:3306/broadleaf?useUnicode=true&amp;characterEncoding=utf8</Set>
+            	<Set name="username">root</Set>
+            	<Set name="password">root</Set>
+        	</New>
+    	</Arg>
+	</New> 
+<!-- MySQL Integration End -->	
 </Configure>
